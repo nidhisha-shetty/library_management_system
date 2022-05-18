@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create book details</title>
+</head>
+<body>
+	<style>
+		.button {
+			border: none;
+			font-family: "georgia",sans-serif;
+			font-style:italic;
+			border-radius: 6px;
+			cursor: pointer;
+			margin: 1px;
+			padding: 10px;
+			width: 80px;
+			border-radius: 6px;
+			color: Black;
+			background-size: 200%;
+			background-image: linear-gradient(to left, #BDC581, #58B19F, #BDC581);
+			transition: 0.1s;
+			overflow: hidden;
+		}
+		
+		
+	</style>
+<p align="center"><u><font size="4"> Change book details</font></u></p>
+{% for x in messages %}
+	{{ x }}
+{% endfor %}
+<form align="center" method="post" enctype="multipart/form-data" style = "font-family:georgia;font-style:italic;"> {% csrf_token %}
+
+	<b>{{ context_form.as_p }}</b>
+	<div class="container1">
+	<input type="submit" button class="button" value = "Save"> 
+	<button class="button"><a href="/home">Cancel</a></button>
+	</div>
+
+</form>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for x in context_qs %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<style>
+		.button {
+			border: none;
+			font-family: "georgia",sans-serif;
+			font-style:italic;
+			border-radius: 6px;
+			cursor: pointer;
+			background-size: 10%
+			margin: 1px;
+			padding: 1px;
+			width: 50px;
+			border-radius: 6px;
+			color: Black;
+			background-size: 200%;
+			
+		}
+</style>
+
+	<!-- <li><a href=>{{ x.book_title }} -- {{ x.book_author }} <br/></li> -->
+	<li><a class="button" href="{{ x.go_to_link_edit }}" > {{ x.book_name }}</li>
+
+{% endfor %}
+
+<p align="center">
+<button class="button"><a href ='/home'>Back</a></button>
+</p>
+</body>
+</html>
+
+{% endblock %}

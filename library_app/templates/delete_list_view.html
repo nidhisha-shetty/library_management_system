@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for x in context_qs %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<style>
+		.button {
+			border: none;
+			font-family: "georgia",sans-serif;
+			font-style:italic;
+			border-radius: 6px;
+			cursor: pointer;
+			margin: 1px;
+			border-radius: 6px;
+			color: Black;
+			
+		}
+</style>
+
+    <li><a class="button" href="{{ x.go_to_link_delete }}"> {{ x.book_name }} </li>
+
+{% endfor %}
+</body>
+</html>
+<p align="center">
+<button class="button"><a href ='/home'>Back</a></button>
+</p>
+
+{% endblock %}

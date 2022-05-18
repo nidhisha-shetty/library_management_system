@@ -1,0 +1,43 @@
+
+<h1 align="center">Library management system</h1>
+{% load static %}
+
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+<style>
+a.fixed {
+position: fixed;
+right: 0;
+top: 0;
+width: 260px;
+border: 3px solid #222320;
+}
+
+.button {
+    border: none;
+    font-family: "georgia",sans-serif;
+    font-style:italic;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 1px;
+    border-radius: 6px;
+    color: Black;
+    
+}
+</style>
+{% block content %}
+  <h2>Login</h2>
+  <form method="post">
+    <input type="hidden" name="next" value="/home" />
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+  <body style="background:azure;">
+</body>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+Are you sure, you want to delete '{{context_obj.book_name}}' ?
+
+<form method="POST">{% csrf_token %}
+
+	<input type="submit" value="Delete"/>
+
+</form>
+
+{% endblock %}
